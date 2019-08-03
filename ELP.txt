@@ -1,0 +1,31 @@
+TodoStore
+    -@observable todos
+    [x]@action addTodo
+    [x]@action removeTodo
+    [x]@action setAppliedFilter
+    [x]@action clearCompleted
+    [x]@computed filteredtodos
+    [x]@computed remainingTodoItems
+TodoModel
+    -id
+    -@observable description
+    -@observable isCompleted
+
+    [x]@action onToggleCompleted
+    [x]@action updateTodo
+
+<TodoApp>
+    [x]<EnterTodoBoX>
+        -[x]Integrate with addTodo in TodoStore
+    [*]<TodoList>
+        -<TodoItem>
+            -[x]checkBox  -- Integrate with changeTodoCompletionState in Todomodel
+            -[]<EnterTodoBoX> -- Integrate with updateTodo in TodoModel
+            -[x]delete -- Integrate with deleteTodo in TodoStore
+    <TodoFilters>
+            -[x]ALL
+            -[x]ACTIVE
+            -[x]COMPLETED
+            -[x]clearCompleted
+
+[x]handle spaces in EnterTodoBoX
